@@ -1,0 +1,19 @@
+<nav class="dui-header-nav {{dui.header.nav.class}}">
+    <div ng-class="(dui.header.nav.container) ? 'container' : ''">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{dui.header.nav.href}}">{{dui.header.nav.title}}</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <dui-nav class="nav navbar-nav" items="dui.header.nav.items"></dui-nav>
+            <div ng-transclude></div>
+        </div>
+    </div>
+</nav>

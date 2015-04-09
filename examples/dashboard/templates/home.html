@@ -1,0 +1,27 @@
+<dui-screen>
+    <dui-screen-header title="Home">
+        <ol class="breadcrumb">
+            <li>angular-dui demo</li>
+            <li class="active">Home</li>
+        </ol>
+    </dui-screen-header>
+    <dui-screen-content>
+        <dui-box ng-repeat="item in ctrl.items">
+            <dui-box-header title="{{item.title}}"></dui-box-header>
+            <dui-box-content>
+                <p>{{item.content}}</p>
+            </dui-box-content>
+            <dui-box-footer>
+                <p class="blog-item-meta">{{item.date}} by <a href="#">{{item.author}}</a></p>
+            </dui-box-footer>
+        </dui-box>
+    </dui-screen-content>
+    <dui-screen-footer>
+        <nav>
+            <ul class="pager">
+                <li><a href="#">Previous</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </nav>
+    </dui-screen-footer>
+</dui-screen>

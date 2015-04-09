@@ -1,0 +1,43 @@
+<dui-screen>
+    <dui-screen-header title="Config">
+        <ol class="breadcrumb">
+            <li>angular-dui demo</li>
+            <li class="active">Config</li>
+        </ol>
+    </dui-screen-header>
+    <dui-screen-content class="row">
+
+        <dui-box class="col-md-6">
+            <dui-box-content>
+
+                <form>
+                    <div class="form-group">
+                        <label >app.name</label>
+                        <input type="text" class="form-control" ng-model="dui.app.name">
+                    </div>
+                    <div class="form-group">
+                        <label >sidebar.class</label>
+                        <input type="text" class="form-control" ng-model="dui.sidebar.class">
+                    </div>
+                    <div class="form-group">
+                        <label >main.class</label>
+                        <input type="text" class="form-control" ng-model="dui.main.class">
+                    </div>
+                    <div class="form-group">
+                        <label >footer.text</label>
+                        <input type="text" class="form-control" ng-model="dui.footer.text">
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="saveConfig()">Save</button>
+                </form>
+
+            </dui-box-content>
+        </dui-box>
+
+        <dui-box class="col-md-6">
+            <dui-box-content>
+                <pre>{{config|json}}</pre>
+            </dui-box-content>
+        </dui-box>
+
+    </dui-screen-content>
+</dui-screen>
