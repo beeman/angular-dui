@@ -2,14 +2,12 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 
-// Static server
-gulp.task('browser-sync', function() {
+gulp.task('serve', function() {
   browserSync({
     server: {
-      //proxy: "http://localhost:3000/",
       baseDir: "./"
     }
   });
 
-  gulp.watch('*', ['browserSync.reload']);
+  gulp.watch(['js/*.js', 'templates/*.html', 'examples/**/*.*'], {cwd: './'}, reload);
 });
