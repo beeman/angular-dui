@@ -1,13 +1,23 @@
-var gulp        = require('gulp');
+var gulp = require('gulp');
 var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
+var reload = browserSync.reload;
 
-gulp.task('serve', function() {
-  browserSync({
-    server: {
-      baseDir: "./"
-    }
-  });
+var watchDirs = [
+  '*',
+  'js/*.js',
+  'templates/*.html',
+  'examples/**/*.*'
+];
 
-  gulp.watch(['js/*.js', 'templates/*.html', 'examples/**/*.*'], {cwd: './'}, reload);
+var bsOptions = {
+  server: {
+    baseDir: "./"
+  },
+  logConnections: true
+};
+
+gulp.task('serve', function () {
+  browserSync(bsOptions);
+
+  gulp.watch(watchDirs, {cwd: './'}, reload);
 });
