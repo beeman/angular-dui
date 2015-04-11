@@ -1,8 +1,13 @@
 var app = angular.module('angularDuiDemo.controllers', []);
 
-app.controller('AppCtrl', function () {
+app.controller('AppCtrl', function ($templateCache) {
 
-  // There seems to be nothing to control here yet :)
+  $templateCache.put("/templates/dui-footer.html",
+    "<footer class='dui-footer'> " +
+    "   <h6 ng-bind-html='dui.footer.text'> </h6>" +
+    "   <div ng-transclude></div>" +
+    "   <h6>override &lt;dui-footer&gt; in AppCtrl</h6>" +
+    "</footer> ");
 
 });
 
